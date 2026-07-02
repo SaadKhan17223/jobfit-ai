@@ -1,5 +1,4 @@
 export async function extractTextFromPdf(file: File): Promise<string> {
-  // Access at call time, not module init time
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const pdfjs = (window as any).pdfjsLib
 
@@ -8,7 +7,7 @@ export async function extractTextFromPdf(file: File): Promise<string> {
   }
 
   pdfjs.GlobalWorkerOptions.workerSrc =
-    'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.worker.min.mjs'
+    'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js'
 
   const arrayBuffer = await file.arrayBuffer()
   const pdf = await pdfjs.getDocument({ data: arrayBuffer }).promise
