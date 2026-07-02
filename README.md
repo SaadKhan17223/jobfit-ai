@@ -24,7 +24,7 @@
 - Deployed on Vercel
 
 ## Running locally
-git clone https://github.com/YOUR_USERNAME/jobfit-ai
+git clone https://github.com/SaadKhan17223/jobfit-ai
 cd jobfit-ai
 npm install
 npm run dev
