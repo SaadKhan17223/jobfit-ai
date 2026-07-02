@@ -2,7 +2,7 @@
 
 > AI-powered resume analyzer — ATS score, keyword gap, bullet rewrites, cover letter & tailored resume templates. Runs 100% in your browser.
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-blue)](https://jobfit-ai.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-blue)]([https://jobfit-ai.vercel.app](https://jobfit-ai-pied.vercel.app/))
 [![React](https://img.shields.io/badge/React-18-blue)]()
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)]()
 [![Groq](https://img.shields.io/badge/Groq-LLaMA_3.3_70B-orange)]()
