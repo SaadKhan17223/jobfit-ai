@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/jobfit-ai/',   // change to '/' if deploying to Vercel
+  base: , '/'  // change to '/jobfit-ai/' if using via github
   optimizeDeps: {
     exclude: ['pdfjs-dist']
   }
