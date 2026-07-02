@@ -1,13 +1,12 @@
-import * as pdfjsLib from 'pdfjs-dist'
+import { GlobalWorkerOptions, getDocument, version } from 'pdfjs-dist'
+import type { TextItem } from 'pdfjs-dist/types/src/display/api'
 
-pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
-  'pdfjs-dist/build/pdf.worker.min.mjs',
-  import.meta.url
-).toString()
+// Dynamically matches CDN worker to whatever version is installed
+GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${version}/build/pdf.worker.min.mjs`
 
 export async function extractTextFromPdf(file: File): Promise<string> {
   const arrayBuffer = await file.arrayBuffer()
-  const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise
+  const pdf = await getDocument({ data: arrayBuffer }).promise
 
   const textPages: string[] = []
 
@@ -15,7 +14,7 @@ export async function extractTextFromPdf(file: File): Promise<string> {
     const page = await pdf.getPage(i)
     const content = await page.getTextContent()
     const pageText = content.items
-      .map((item) => ('str' in item ? item.str : ''))
+      .map((item) => ('str' in item ? (item as TextItem).str : ''))
       .join(' ')
     textPages.push(pageText)
   }
