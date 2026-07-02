@@ -3,8 +3,9 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/'  // change to '/jobfit-ai/' if using via github
+  base: '/',
   optimizeDeps: {
     exclude: ['pdfjs-dist']
-  }
+  },
+  assetsInclude: ['**/*.mjs']
 })
